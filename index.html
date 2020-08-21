@@ -1,27 +1,1181 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html class="no-js" lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>Flappy Bird</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>首页 - 洛谷 | 计算机科学教育新生态</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta name="csrf-token" content="1598096161:nfAar68idHJ1fHrhxZ9AGsqJgVdCecRDviGk9Hujdr8=">
+            <meta name="keywords" content="洛谷,洛谷Online judge,noip,noi,信息学,信息学竞赛,acm,竞赛,onlineJudge,洛谷Onlinejudge,信息学学习" />
+<meta name="description" content="洛谷创办于2013年，致力于为参加noip、noi、acm的选手提供清爽、快捷的编程体验。它拥有在线测题系统、强大的社区、在线学习功能。很多教程内容由各位oiers提供的，内容广泛。无论是初学oi的蒟蒻，还是久经沙场的神犇，均可从中获益，也可以帮助他人，共同进步。是学习noip等竞赛时理想的网站。" />
+        <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/katex.min.css"/>
+    <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/luogu3.css?ver=20190102">
+    <link rel="stylesheet" href="https://cdn.luogu.com.cn/css/highlight_tomorrow.css">
+    <link rel="stylesheet" href="https://cdn.luogu.com.cn/markdown-palettes/markdown-palettes.css?ver=20190219">
+    <script src="https://cdn.luogu.com.cn/js/jquery-2.1.1.min.js"></script>
+    <script src="https://cdn.luogu.com.cn/js/luogu3_pre.js?ver=20190101"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" media="screen"/>
+    <link rel="stylesheet" href="https://cdn.luogu.com.cn/fe/loader.css?ver=20200820">
+    <script>window._feInjection = JSON.parse(decodeURIComponent("%7B%22code%22%3A200%2C%22currentUser%22%3A%7B%22blogAddress%22%3Anull%2C%22followingCount%22%3A44%2C%22followerCount%22%3A13%2C%22ranking%22%3A1235%2C%22unreadMessageCount%22%3A0%2C%22unreadNoticeCount%22%3A0%2C%22verified%22%3Atrue%2C%22uid%22%3A225333%2C%22name%22%3A%22li0201%22%2C%22slogan%22%3A%22%22%2C%22badge%22%3Anull%2C%22isAdmin%22%3Afalse%2C%22isBanned%22%3Afalse%2C%22color%22%3A%22Orange%22%2C%22ccfLevel%22%3A5%7D%2C%22currentTemplate%22%3A%22Excited%22%2C%22currentData%22%3A%7B%22shortHeader%22%3Atrue%2C%22pageName%22%3A%22%5Cu6d1b%5Cu8c37%22%2C%22title%22%3A%22%5Cu9996%5Cu9875%22%7D%2C%22currentTheme%22%3A%7B%22id%22%3A99%2C%22header%22%3A%7B%22imagePath%22%3A%22https%3A%5C%2F%5C%2Fi.loli.net%5C%2F2019%5C%2F08%5C%2F01%5C%2F5d42d1bb1b30749952.png%22%2C%22color%22%3A%5B%5B91%2C165%2C197%2C1%5D%2C%5B207%2C148%2C197%2C1%5D%5D%2C%22blur%22%3A0%2C%22brightness%22%3A0%2C%22degree%22%3A90%2C%22repeat%22%3A0%2C%22position%22%3A%5B50%2C50%5D%2C%22size%22%3A%5B-1%2C-1%5D%2C%22type%22%3A1%2C%22__CLASS_NAME%22%3A%22Luogu%5C%5CDataClass%5C%5CUser%5C%5CThemeConfig%5C%5CHeaderFooterConfig%22%7D%2C%22sideNav%22%3A%7B%22logoBackgroundColor%22%3A%5B91%2C165%2C197%2C1%5D%2C%22color%22%3A%5B91%2C165%2C197%2C1%5D%2C%22invertColor%22%3Atrue%2C%22__CLASS_NAME%22%3A%22Luogu%5C%5CDataClass%5C%5CUser%5C%5CThemeConfig%5C%5CSideNavConfig%22%7D%2C%22footer%22%3A%7B%22imagePath%22%3Anull%2C%22color%22%3A%5B%5B91%2C165%2C197%2C1%5D%5D%2C%22blur%22%3A0%2C%22brightness%22%3A0%2C%22degree%22%3A0%2C%22repeat%22%3A0%2C%22position%22%3A%5B0%2C0%5D%2C%22size%22%3A%5B0%2C0%5D%2C%22type%22%3A2%2C%22__CLASS_NAME%22%3A%22Luogu%5C%5CDataClass%5C%5CUser%5C%5CThemeConfig%5C%5CHeaderFooterConfig%22%7D%7D%7D"));window._feConfigVersion=1597599825;</script>
+    <script>window._release = '20200820';</script>
+    <script src="https://cdn.luogu.com.cn/fe/loader.js?ver=20200820" charset="utf-8" defer></script>
 </head>
-
 <body>
-  <iframe id="game" height="100%" frameborder="0" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; ambient-light-sensor; encrypted-media" allowtransparency="true"  allowfullscreen="true"></iframe>
+<div id="app"></div>
+<script>
+    function scrollToId (id) {
+        $('html, body').animate({
+            scrollTop: ($('#' + id).offset().top)
+        }, 500);
+    }
+</script>
+<style>
+    .lg-toolbar {
+        display: none;
+    }
 
-  <div id="dialog-rate" class="flex-container">
-    <div class="dialog">
-      <h2 class="dialog-header" i18n="rateDialogTitle"></h2>
-      <div class="dialog-content">
-        <p i18n="rateDialogDesc"></p>
-      </div>
-      <div class="dialog-button">
-        <a href="#" id="dialog-yes" class="cancel" i18n="rateDialogYes"></a>
-        <a href="#" id="dialog-no" i18n="rateDialogNo"></a>
-      </div>
+    #app-old{
+        display: block;
+        margin-bottom: 2em;
+        /* position: relative;*/
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    code {
+        font-family: monospace, "Courier New";
+    }
+
+</style>
+<div id="app-old">
+<script>
+
+
+</script>
+<div class="lg-index-content am-center ">
+
+    <div class="am-g">
+        <div class="am-u-md-12 ">
+            <div class="lg-article">
+                <div class="am-g">
+                    <div class="am-u-md-8">
+                        <div class="am-slider am-slider-default" data-am-flexslider id="lg-slider">
+                            <ul class="am-slides">
+                <li><a target="_blank"  href = "https://www.luogu.com.cn/contest/33190"><img src='https://cdn.luogu.com.cn/upload/image_hosting/jin560ul.png'/></a></li><li><img src='https://cdn.luogu.com.cn/upload/image_hosting/9dnyge7l.png'/></li><li><a target="_blank"  href = "https://www.luogu.com.cn/discuss/show/234817"><img src='https://ipic.luogu.com.cn/2020summer/banner.png'/></a></li><li><a target="_blank"  href = "https://www.luogu.org/discuss/show/47327"><img src='https://cdn.luogu.com.cn/upload/pic/22071.png'/></a></li>                            </ul>
+                        </div>
+                    </div>
+                    <div class="am-u-md-4 lg-punch am-text-center">
+                        <h2 style='margin-bottom: 0'><a class='lg-fg-orange lg-bold' href="/user/225333"  target="_blank">li0201</a>&nbsp;<a class="sb_amazeui" target="_blank" href="/discuss/show/142324"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#5eb95e" style="margin-bottom: -3px;"><path d="M16 8C16 6.84375 15.25 5.84375 14.1875 5.4375C14.6562 4.4375 14.4688 3.1875 13.6562 2.34375C12.8125 1.53125 11.5625 1.34375 10.5625 1.8125C10.1562 0.75 9.15625 0 8 0C6.8125 0 5.8125 0.75 5.40625 1.8125C4.40625 1.34375 3.15625 1.53125 2.34375 2.34375C1.5 3.1875 1.3125 4.4375 1.78125 5.4375C0.71875 5.84375 0 6.84375 0 8C0 9.1875 0.71875 10.1875 1.78125 10.5938C1.3125 11.5938 1.5 12.8438 2.34375 13.6562C3.15625 14.5 4.40625 14.6875 5.40625 14.2188C5.8125 15.2812 6.8125 16 8 16C9.15625 16 10.1562 15.2812 10.5625 14.2188C11.5938 14.6875 12.8125 14.5 13.6562 13.6562C14.4688 12.8438 14.6562 11.5938 14.1875 10.5938C15.25 10.1875 16 9.1875 16 8ZM11.4688 6.625L7.375 10.6875C7.21875 10.8438 7 10.8125 6.875 10.6875L4.5 8.3125C4.375 8.1875 4.375 7.96875 4.5 7.8125L5.3125 7C5.46875 6.875 5.6875 6.875 5.8125 7.03125L7.125 8.34375L10.1562 5.34375C10.3125 5.1875 10.5312 5.1875 10.6562 5.34375L11.4688 6.15625C11.5938 6.28125 11.5938 6.5 11.4688 6.625Z"></path></svg></a> 的运势</h2><span class="lg-punch-result lg-fg-red">§ 中吉 §</span><div class="am-g">
+    <div class="am-u-sm-6 lg-fg-red">
+                    <span class="lg-bold">宜：</span>参加NOI<br>
+            <span class="lg-small">捧杯稳了</span><br>
+            <span class="lg-bold">宜：</span>打sdvx<br>
+            <span class="lg-small">您暴了</span>
+        
+
     </div>
-  </div>
+    <div class="am-u-sm-6">
+                    <span class="lg-bold">忌：</span>刷题<br>
+            <span class="lg-small">容易WA</span><br>
+            <span class="lg-bold">忌：</span>睡觉<br>
+            <span class="lg-small">翻来覆去睡不着</span>
+            </div>
+    <div class="am-u-sm-12 lg-small">
+        &nbsp;<br>
+        你已经在洛谷连续打卡了 <strong>276</strong> 天</strong><br>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<script type="text/javascript" src="popup.bundle.js"></script></body>
+    <div class="am-g">
+        <div class="am-u-md-3">
+            <div class="lg-article lg-index-stat">
+                <h2>问题跳转</h2>
+                <div class="am-input-group am-input-group-primary am-input-group-sm">
+                    <input type="text" class="am-form-field" placeholder="例：P1001，可跳至A+B" name="toproblem">
+                </div>
+                <p>
+                    <button class="am-btn am-btn-danger am-btn-sm" name="goto">跳转</button>
+                    <button class="am-btn am-btn-primary am-btn-sm" name="gotorandom">随机跳题</button>
+                </p>
+            </div>
+        </div>
+        <div class="am-u-md-9">
+            <div class="lg-article lg-index-stat" style="padding: 0">
+                                    <div class=" am-g" style="height: 100%;padding-top: 10px;">
+                        <div id="container" class="am-u-md-6 am-text-center" style=" height:180px; margin-right: -20px">
+                        </div>
+                        <div id="container2" class="am-u-md-6 am-text-center" style=" height:180px ">
+                        </div>
+                    </div>
+                    <script>
+                        $(function () {
+                            $('#container').highcharts({"title":{"text":"","floating":true},"chart":{"backgroundColor":"rgba(0,0,0,0)"},"legend":{"enabled":false},"xAxis":{"categories":["Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul"],"floating":true,"minTickInterval":2},"yAxis":[{"labels":{"format":"{value}","style":{"color":"Highcharts.getOptions().colors[1]"}},"title":{"text":"\u7d2f\u79ef\u901a\u8fc7","style":{"color":"Highcharts.getOptions().colors[1]"}},"floor":47},{"labels":{"format":"{value}","style":{"color":"Highcharts.getOptions().colors[3]"},"enabled":false},"title":{"text":"\u65b0\u901a\u8fc7","style":{"color":"Highcharts.getOptions().colors[3]"},"enabled":false},"opposite":true}],"tooltip":{"shared":true},"series":[{"name":"\u7d2f\u79ef\u901a\u8fc7\u6570","type":"area","data":[52,66,112,180,195,321,345,350,351,353,392,410]},{"name":"\u5f53\u6708\u901a\u8fc7\u6570","type":"column","data":[16,14,47,69,17,132,24,5,1,2,42,22],"yAxis":1}],"credits":{"enabled":false}});
+                            $('#container2').highcharts({"title":{"text":"","floating":true},"chart":{"backgroundColor":"rgba(0,0,0,0)"},"legend":{"enabled":false},"xAxis":{"categories":["08-1","08-2","08-3","08-4","08-5","08-6","08-7","08-8","08-9","08-10","08-11","08-12","08-13","08-14","08-15","08-16","08-17","08-18","08-19","08-20","08-21","08-22","08-23","08-24","08-25","08-26","08-27","08-28","08-29","08-30","08-31"],"floating":true,"minTickInterval":5},"yAxis":[{"labels":{"format":"{value}","style":{"color":"Highcharts.getOptions().colors[1]"},"enabled":false},"title":{"text":"\u7d2f\u79ef\u901a\u8fc7","style":{"color":"Highcharts.getOptions().colors[1]"},"enabled":false},"floor":406},{"labels":{"format":"{value}","style":{"color":"Highcharts.getOptions().colors[3]"}},"title":{"text":"\u65b0\u901a\u8fc7","style":{"color":"Highcharts.getOptions().colors[3]"}},"opposite":true}],"tooltip":{"shared":true},"series":[{"name":"\u7d2f\u79ef\u901a\u8fc7\u6570","type":"area","data":[411,412,413,415,415,415,418,418,418,418,418,418,418,418,418,420,421,424,428,434,null,null,null,null,null,null,null,null,null,null]},{"name":"\u5f53\u65e5\u901a\u8fc7\u6570","type":"column","data":[1,1,5,3,0,0,3,0,0,0,0,0,0,0,0,2,1,3,4,7,null,null,null,null,null,null,null,null,null,null],"yAxis":1}],"credits":{"enabled":false}});
+                        });
+                    </script>
+                            </div>
+        </div>
+    </div>
 
+    
+    <div class="am-g">
+        <div class="am-u-lg-3 am-u-md-4 lg-right">
+            <div class="lg-article">
+                <h2>本站公告</h2>
+                                    <p><a data-pjax href="/discuss/show?postid=241461">洛谷新用户必读</a></p>
+                                    <p><a data-pjax href="/discuss/show?postid=244341">【集合贴】公告整合贴</a></p>
+                                    <p><a data-pjax href="/discuss/show?postid=174811">洛谷主题库题目规范</a></p>
+                                    <p><a data-pjax href="/discuss/show?postid=174934">题解审核及反馈要求</a></p>
+                                    <p><a data-pjax href="/discuss/show?postid=244657">题解提交注意事项</a></p>
+                                    <p><a data-pjax href="/discuss/show?postid=174936">新版公开比赛要求</a></p>
+                                    <p><a data-pjax href="/discuss/show?postid=86673">评测机语言环境信息</a></p>
+                                    <p><a data-pjax href="/discuss/show?postid=203644">【题单征集】精选题单征集贴</a></p>
+                                    <p><a data-pjax href="/discuss/show?postid=223773">洛谷更新日志</a></p>
+                            </div>
+                            <div class="lg-article">
+                                        <h2>任务计划
+                                                    <button name = "task-edit" class="am-btn am-btn-sm am-btn-primary lg-right" onclick="$('.tasklist-edit').show();$(this).hide();$('[name=task-end-edit]').show()">编辑</button>
+                            <button name = "task-end-edit"class="am-btn am-btn-sm am-btn-danger lg-right "
+                                    onclick="$('.tasklist-edit').hide();$(this).hide();$('[name=task-edit]').show()" style="display: none;">结束编辑</button>
+                                            </h2>
+                                                                    <div class="tasklist-item" data-pid="P1038">
+                            <div><a href="/record/list?user=225333&pid=P1038" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1038"  target="_blank"><b>P1038</b> 神经网络</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1038">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1280">
+                            <div><a href="/record/list?user=225333&pid=P1280" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1280"  target="_blank"><b>P1280</b> 尼克的任务</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1280">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P5017">
+                            <div><a href="/record/list?user=225333&pid=P5017" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P5017"  target="_blank"><b>P5017</b> 摆渡车</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P5017">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                                            <div class="tasklist-item" data-pid="P1086">
+                            <div><a href="/record/list?user=225333&pid=P1086" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1086"  target="_blank"><b>P1086</b> 花生采摘</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1086">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="U97058">
+                            <div><a href="/record/list?user=225333&pid=U97058" target="_blank"><strong class="lg-fg-green"><i class="am-icon-check"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/U97058"  target="_blank"><b>U97058</b> LIU 语言解释器</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="U97058">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="CF1187C">
+                            <div><a href="/record/list?user=225333&pid=CF1187C" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/CF1187C"  target="_blank"><b>CF1187C</b> Vasya And Array</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="CF1187C">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="CF767E">
+                            <div><a href="/record/list?user=225333&pid=CF767E" target="_blank"><strong class="lg-fg-green"><i class="am-icon-check"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/CF767E"  target="_blank"><b>CF767E</b> Change-free</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="CF767E">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1967">
+                            <div><a href="/record/list?user=225333&pid=P1967" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1967"  target="_blank"><b>P1967</b> 货车运输</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1967">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1792">
+                            <div><a href="/record/list?user=225333&pid=P1792" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1792"  target="_blank"><b>P1792</b> [国家集训队]种树</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1792">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1712">
+                            <div><a href="/record/list?user=225333&pid=P1712" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1712"  target="_blank"><b>P1712</b> [NOI2016]区间</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1712">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P2704">
+                            <div><a href="/record/list?user=225333&pid=P2704" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P2704"  target="_blank"><b>P2704</b> [NOI2001]炮兵阵地</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P2704">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1772">
+                            <div><a href="/record/list?user=225333&pid=P1772" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1772"  target="_blank"><b>P1772</b> [ZJOI2006]物流运输</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1772">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P2831">
+                            <div><a href="/record/list?user=225333&pid=P2831" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P2831"  target="_blank"><b>P2831</b> 愤怒的小鸟</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P2831">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="CF733F">
+                            <div><a href="/record/list?user=225333&pid=CF733F" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/CF733F"  target="_blank"><b>CF733F</b> Drivers Dissatisfaction</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="CF733F">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="CF1253F">
+                            <div><a href="/record/list?user=225333&pid=CF1253F" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/CF1253F"  target="_blank"><b>CF1253F</b> Cheap Robot</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="CF1253F">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="CF1120D">
+                            <div><a href="/record/list?user=225333&pid=CF1120D" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/CF1120D"  target="_blank"><b>CF1120D</b> Power Tree</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="CF1120D">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="CF160D">
+                            <div><a href="/record/list?user=225333&pid=CF160D" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/CF160D"  target="_blank"><b>CF160D</b> Edges in MST</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="CF160D">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P4878">
+                            <div><a href="/record/list?user=225333&pid=P4878" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P4878"  target="_blank"><b>P4878</b> [USACO05DEC]Layout G</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P4878">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="CF19E">
+                            <div><a href="/record/list?user=225333&pid=CF19E" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/CF19E"  target="_blank"><b>CF19E</b> Fairy</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="CF19E">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P2423">
+                            <div><a href="/record/list?user=225333&pid=P2423" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P2423"  target="_blank"><b>P2423</b> [HEOI2012]朋友圈</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P2423">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="CF45G">
+                            <div><a href="/record/list?user=225333&pid=CF45G" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/CF45G"  target="_blank"><b>CF45G</b> Prime Problem</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="CF45G">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1258">
+                            <div><a href="/record/list?user=225333&pid=P1258" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1258"  target="_blank"><b>P1258</b> 小车问题</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1258">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P2571">
+                            <div><a href="/record/list?user=225333&pid=P2571" target="_blank"><strong class="lg-fg-red">10</strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P2571"  target="_blank"><b>P2571</b> [SCOI2010]传送带</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P2571">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1429">
+                            <div><a href="/record/list?user=225333&pid=P1429" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1429"  target="_blank"><b>P1429</b> 平面最近点对（加强版）</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1429">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1257">
+                            <div><a href="/record/list?user=225333&pid=P1257" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1257"  target="_blank"><b>P1257</b> 平面上的最接近点对</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1257">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P2491">
+                            <div><a href="/record/list?user=225333&pid=P2491" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P2491"  target="_blank"><b>P2491</b> [SDOI2011]消防</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P2491">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1717">
+                            <div><a href="/record/list?user=225333&pid=P1717" target="_blank"><strong class="lg-fg-green"><i class="am-icon-check"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1717"  target="_blank"><b>P1717</b> 钓鱼</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1717">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1801">
+                            <div><a href="/record/list?user=225333&pid=P1801" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1801"  target="_blank"><b>P1801</b> 黑匣子</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1801">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P2887">
+                            <div><a href="/record/list?user=225333&pid=P2887" target="_blank"><strong class="lg-fg-green"><i class="am-icon-check"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P2887"  target="_blank"><b>P2887</b> [USACO07NOV]Sunscreen G</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P2887">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1281">
+                            <div><a href="/record/list?user=225333&pid=P1281" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1281"  target="_blank"><b>P1281</b> 书的复制</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1281">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1883">
+                            <div><a href="/record/list?user=225333&pid=P1883" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1883"  target="_blank"><b>P1883</b> 函数</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1883">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1613">
+                            <div><a href="/record/list?user=225333&pid=P1613" target="_blank"><strong class="lg-fg-green"><i class="am-icon-check"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1613"  target="_blank"><b>P1613</b> 跑路</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1613">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P3398">
+                            <div><a href="/record/list?user=225333&pid=P3398" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P3398"  target="_blank"><b>P3398</b> 仓鼠找sugar</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P3398">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P3487">
+                            <div><a href="/record/list?user=225333&pid=P3487" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P3487"  target="_blank"><b>P3487</b> [POI2009]ARC-Architects</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P3487">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P3545">
+                            <div><a href="/record/list?user=225333&pid=P3545" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P3545"  target="_blank"><b>P3545</b> [POI2012]HUR-Warehouse Store</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P3545">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P3822">
+                            <div><a href="/record/list?user=225333&pid=P3822" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P3822"  target="_blank"><b>P3822</b> [NOI2017]整数</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P3822">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P3586">
+                            <div><a href="/record/list?user=225333&pid=P3586" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P3586"  target="_blank"><b>P3586</b> [POI2015]LOG</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P3586">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P3419">
+                            <div><a href="/record/list?user=225333&pid=P3419" target="_blank"><strong class="lg-fg-green"><i class="am-icon-check"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P3419"  target="_blank"><b>P3419</b> [POI2005]SAM-Toy Cars</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P3419">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1073">
+                            <div><a href="/record/list?user=225333&pid=P1073" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1073"  target="_blank"><b>P1073</b> 最优贸易</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1073">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P3387">
+                            <div><a href="/record/list?user=225333&pid=P3387" target="_blank"><strong class="lg-fg-green"><i class="am-icon-check"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P3387"  target="_blank"><b>P3387</b> 【模板】缩点</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P3387">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1084">
+                            <div><a href="/record/list?user=225333&pid=P1084" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1084"  target="_blank"><b>P1084</b> 疫情控制</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1084">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P2296">
+                            <div><a href="/record/list?user=225333&pid=P2296" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P2296"  target="_blank"><b>P2296</b> 寻找道路</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P2296">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P5022">
+                            <div><a href="/record/list?user=225333&pid=P5022" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P5022"  target="_blank"><b>P5022</b> 旅行</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P5022">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P2680">
+                            <div><a href="/record/list?user=225333&pid=P2680" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P2680"  target="_blank"><b>P2680</b> 运输计划</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P2680">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1600">
+                            <div><a href="/record/list?user=225333&pid=P1600" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1600"  target="_blank"><b>P1600</b> 天天爱跑步</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1600">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P5021">
+                            <div><a href="/record/list?user=225333&pid=P5021" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P5021"  target="_blank"><b>P5021</b> 赛道修建</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P5021">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P2121">
+                            <div><a href="/record/list?user=225333&pid=P2121" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P2121"  target="_blank"><b>P2121</b> 拆地毯</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P2121">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1262">
+                            <div><a href="/record/list?user=225333&pid=P1262" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1262"  target="_blank"><b>P1262</b> 间谍网络</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1262">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1155">
+                            <div><a href="/record/list?user=225333&pid=P1155" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1155"  target="_blank"><b>P1155</b> 双栈排序</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1155">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P1875">
+                            <div><a href="/record/list?user=225333&pid=P1875" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1875"  target="_blank"><b>P1875</b> 佳佳的魔法药水</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P1875">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P4180">
+                            <div><a href="/record/list?user=225333&pid=P4180" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P4180"  target="_blank"><b>P4180</b> [BJWC2010]严格次小生成树</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P4180">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P2597">
+                            <div><a href="/record/list?user=225333&pid=P2597" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P2597"  target="_blank"><b>P2597</b> [ZJOI2012]灾难</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P2597">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P3825">
+                            <div><a href="/record/list?user=225333&pid=P3825" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P3825"  target="_blank"><b>P3825</b> [NOI2017]游戏</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P3825">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                                                    <div class="tasklist-item" data-pid="P5540">
+                            <div><a href="/record/list?user=225333&pid=P5540" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P5540"  target="_blank"><b>P5540</b> 最小乘积生成树</a></div>
+                            <div style="margin:10px 0;display:none;" class="tasklist-edit">
+                                <button class="am-btn am-btn-sm am-btn-success"
+                                        data-pid="P5540">完成任务</button>
+                                <hr>
+                            </div>
+                        </div>
+                                        <script>
+                        $(".tasklist-edit").children("button").click(function() {
+                            var pid = $(this).attr('data-pid');
+                            $.ajax({
+                                type: "post",
+                                url: '/fe/api/problem/tasklistRemove',
+                                data: JSON.stringify({
+                                    pid: pid
+                                }),
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                            })
+                            $("div.tasklist-item[data-pid="+pid+"]").hide();
+                        });
+                    </script>
+                    <h2>智能推荐</h2>
+                                            <div><div><a href="/record/list?user=225333&pid=P2024" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P2024"  target="_blank"><b>P2024</b> [NOI2001]食物链</a></div></div>
+                                            <div><div><a href="/record/list?user=225333&pid=P3388" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P3388"  target="_blank"><b>P3388</b> 【模板】割点（割顶）</a></div></div>
+                                            <div><div><a href="/record/list?user=225333&pid=P1967" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1967"  target="_blank"><b>P1967</b> 货车运输</a></div></div>
+                                            <div><div><a href="/record/list?user=225333&pid=P2341" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P2341"  target="_blank"><b>P2341</b> [USACO03FALL][HAOI2006]受欢迎的牛 G</a></div></div>
+                                            <div><div><a href="/record/list?user=225333&pid=P1993" target="_blank"><strong class=""><i class="am-icon-minus"></i></strong></a><a class='colored'  style="padding-left: 3px"  href="/problemnew/show/P1993"  target="_blank"><b>P1993</b> 小 K 的农场</a></div></div>
+                                        <div><small><br>洛谷根据您近期的做题情况，使用机器学习自动为您推荐符合您目前程度的题目。本列表每日更新一次。</small></div>
+                </div>
+                                    <div class="lg-article am-hide-sm">
+                <h2>友情链接</h2>
+                <p>
+                    <strong>学校与机构</strong><br>
+                    <a href="http://www.yizhong.xm.fj.cn">厦门一中</a><br>
+                    <a href="https://www.chtholly.ac.cn/">中国珂学院</a><br>
+                </p>
+                <p>
+                    <strong>合作伙伴</strong><br>
+                    <a href="http://tianhai.info/">天海信息科技</a>及<a href="http://www.oiinhand.info/">Oi In Hand</a><br/>
+                    <a href="https://vijos.org">Vijos</a> |
+                    <a href="https://ihola.one/">¡Hola!</a> |
+                    <a href="https://www.mxdeu.com/" target="_blank">梦想德语</a>
+                    <br/>
+                </p>
+
+                <p>
+                    <strong>学生博客</strong><br>
+
+                    <a href="http://ruanx.pw/" target="_blank">阮行止的博客</a> |
+                    <a href="https://www.johnzhang.xyz/" target="_blank">张佑杰的博客</a>
+
+                </p>
+
+                <p>
+                    <strong>洛谷项目</strong><br>
+
+                    <a href="/discuss/show?postid=11410" target="_blank">CYaRon 测试数据生成器</a><br>
+                    <a href="https://class.luogu.com.cn" target="_blank">洛谷网校</a><br>
+                    <a href="https://github.com/luogu-dev/markdown-palettes" target="_blank">Markdown*Palettes</a>
+                </p>
+            </div>
+                    </div>
+
+        <div class="am-u-lg-9 am-u-md-8 lg-index-benben lg-right">
+            <div class="lg-article">
+                <h2 style="margin-bottom: 5px;">近期比赛</h2>
+                                    <section class="am-panel lg-index-contest am-panel-success">
+                        <header class="am-panel-hd">
+                            <h3 class="am-panel-title">
+                                <a data-pjax href="/contestnew/show/33189">【LGR-075】洛谷 8 月月赛 II Div.1</a> &nbsp;
+                                <span class="am-badge am-radius lg-bg-green">Rated</span>
+                            </h3>
+                        </header>
+                        <div class="am-panel-bd">
+                                <span class="lg-small lg-inline-up">
+                                    <span class="am-badge am-radius lg-bg-red">官方比赛</span><br>
+                                    <span class="am-badge am-radius lg-bg-yellow">IOI</span>                                </span>
+                            <span class="lg-small lg-inline-up">
+                                    <strong class="lg-fg-green">未开始</strong>                                18时23分后                                <br>
+                                官方                                </span>
+                            <span class="lg-small lg-inline-up lg-right lg-md-hide">
+                                    08-22 14:00<br>
+                                08-22 18:00                                </span>
+                        </div>
+                    </section>
+                                        <section class="am-panel lg-index-contest am-panel-success">
+                        <header class="am-panel-hd">
+                            <h3 class="am-panel-title">
+                                <a data-pjax href="/contestnew/show/33190">【LGR-075】洛谷 8 月月赛 II Div.2</a> &nbsp;
+                                <span class="am-badge am-radius lg-bg-green">Rated</span>
+                            </h3>
+                        </header>
+                        <div class="am-panel-bd">
+                                <span class="lg-small lg-inline-up">
+                                    <span class="am-badge am-radius lg-bg-red">官方比赛</span><br>
+                                    <span class="am-badge am-radius lg-bg-yellow">IOI</span>                                </span>
+                            <span class="lg-small lg-inline-up">
+                                    <strong class="lg-fg-green">未开始</strong>                                18时23分后                                <br>
+                                官方                                </span>
+                            <span class="lg-small lg-inline-up lg-right lg-md-hide">
+                                    08-22 14:00<br>
+                                08-22 18:00                                </span>
+                        </div>
+                    </section>
+                                        <section class="am-panel lg-index-contest am-panel-danger">
+                        <header class="am-panel-hd">
+                            <h3 class="am-panel-title">
+                                <a data-pjax href="/contestnew/show/32893">Ys Pseudo CF R1(div2)</a> &nbsp;
+                                
+                            </h3>
+                        </header>
+                        <div class="am-panel-bd">
+                                <span class="lg-small lg-inline-up">
+                                    <span class="am-badge am-radius lg-bg-greendark">团队公开赛</span><br>
+                                    <span class="am-badge am-radius lg-bg-yellow">乐多赛</span>                                </span>
+                            <span class="lg-small lg-inline-up">
+                                    <strong class="lg-fg-red">已结束</strong>                                比赛已结束                                <br>
+                                    <a data-pjax href="/team/show?teamid=26615">YsOI出题组</a>                                </span>
+                            <span class="lg-small lg-inline-up lg-right lg-md-hide">
+                                    08-17 14:35<br>
+                                08-17 17:05                                </span>
+                        </div>
+                    </section>
+                                        <section class="am-panel lg-index-contest am-panel-danger">
+                        <header class="am-panel-hd">
+                            <h3 class="am-panel-title">
+                                <a data-pjax href="/contestnew/show/32483">「St-OI」Round2</a> &nbsp;
+                                
+                            </h3>
+                        </header>
+                        <div class="am-panel-bd">
+                                <span class="lg-small lg-inline-up">
+                                    <span class="am-badge am-radius lg-bg-greendark">团队公开赛</span><br>
+                                    <span class="am-badge am-radius lg-bg-yellow">IOI</span>                                </span>
+                            <span class="lg-small lg-inline-up">
+                                    <strong class="lg-fg-red">已结束</strong>                                比赛已结束                                <br>
+                                    <a data-pjax href="/team/show?teamid=24701">StOI出题组</a>                                </span>
+                            <span class="lg-small lg-inline-up lg-right lg-md-hide">
+                                    08-13 14:00<br>
+                                08-13 19:00                                </span>
+                        </div>
+                    </section>
+                                        <section class="am-panel lg-index-contest am-panel-danger">
+                        <header class="am-panel-hd">
+                            <h3 class="am-panel-title">
+                                <a data-pjax href="/contestnew/show/30167">【LGR-074】洛谷 8 月月赛 I &amp; MdOI Round 3 Div.2</a> &nbsp;
+                                <span class="am-badge am-radius lg-bg-green">Rated</span>
+                            </h3>
+                        </header>
+                        <div class="am-panel-bd">
+                                <span class="lg-small lg-inline-up">
+                                    <span class="am-badge am-radius lg-bg-red">官方比赛</span><br>
+                                    <span class="am-badge am-radius lg-bg-yellow">IOI</span>                                </span>
+                            <span class="lg-small lg-inline-up">
+                                    <strong class="lg-fg-red">已结束</strong>                                比赛已结束                                <br>
+                                                                </span>
+                            <span class="lg-small lg-inline-up lg-right lg-md-hide">
+                                    08-08 14:00<br>
+                                08-08 18:00                                </span>
+                        </div>
+                    </section>
+                                        <section class="am-panel lg-index-contest am-panel-danger">
+                        <header class="am-panel-hd">
+                            <h3 class="am-panel-title">
+                                <a data-pjax href="/contestnew/show/30166">【LGR-074】洛谷 8 月月赛 I &amp; MdOI Round 3 Div.1</a> &nbsp;
+                                <span class="am-badge am-radius lg-bg-green">Rated</span>
+                            </h3>
+                        </header>
+                        <div class="am-panel-bd">
+                                <span class="lg-small lg-inline-up">
+                                    <span class="am-badge am-radius lg-bg-red">官方比赛</span><br>
+                                    <span class="am-badge am-radius lg-bg-yellow">IOI</span>                                </span>
+                            <span class="lg-small lg-inline-up">
+                                    <strong class="lg-fg-red">已结束</strong>                                比赛已结束                                <br>
+                                                                </span>
+                            <span class="lg-small lg-inline-up lg-right lg-md-hide">
+                                    08-08 14:00<br>
+                                08-08 18:00                                </span>
+                        </div>
+                    </section>
+                                </div>
+            <div class="lg-article">
+                <h2>最近讨论</h2>
+                                <section class="am-panel lg-index-contest am-panel-primary">
+
+                    <div class="am-panel-bd">
+                        <div class="lg-inline-up"><a href="/user/35998" class="center">
+    <img src="https://cdn.luogu.com.cn/upload/usericon/35998.png" class="am-comment-avatar"/>
+    </a></div>
+                        <div class="lg-inline-up">
+                            <a data-pjax href="/discuss/show?postid=47327">【日报#284】RE：从零开始搭建自…</a>
+
+                            <br>
+                            <span class="lg-small"><a class='lg-fg-green' href="/user/35998"  target="_blank">犇犇犇犇</a></span>
+                            <span class="lg-small">In
+                    <a data-pjax
+                       href="/discuss/lists?forumname=academics">学术版</a><br>
+                    @07-03 12:07                                        <span class="lg-small">9083回复</span>
+                                                                                    <span class="am-badge am-radius lg-bg-red">置顶</span>
+                                                            </span>
+                        </div>
+                    </div>
+                </section>
+                                <section class="am-panel lg-index-contest am-panel-primary">
+
+                    <div class="am-panel-bd">
+                        <div class="lg-inline-up"><a href="/user/3" class="center">
+    <img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avatar"/>
+    </a></div>
+                        <div class="lg-inline-up">
+                            <a data-pjax href="/discuss/show?postid=152590">（8.13 更新）讨论质量严控通知</a>
+
+                            <br>
+                            <span class="lg-small"><a class='lg-fg-purple lg-bold' href="/user/3"  target="_blank">洛谷</a></span>
+                            <span class="lg-small">In
+                    <a data-pjax
+                       href="/discuss/lists?forumname=siteaffairs">站务版</a><br>
+                    @10-09 23:10                                        <span class="lg-small">1453回复</span>
+                                                                                    <span class="am-badge am-radius lg-bg-red">置顶</span>
+                                                            </span>
+                        </div>
+                    </div>
+                </section>
+                                <section class="am-panel lg-index-contest am-panel-primary">
+
+                    <div class="am-panel-bd">
+                        <div class="lg-inline-up"><a href="/user/3" class="center">
+    <img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avatar"/>
+    </a></div>
+                        <div class="lg-inline-up">
+                            <a data-pjax href="/discuss/show?postid=249499">NOI2020 数据已经上传</a>
+
+                            <br>
+                            <span class="lg-small"><a class='lg-fg-purple lg-bold' href="/user/3"  target="_blank">洛谷</a></span>
+                            <span class="lg-small">In
+                    <a data-pjax
+                       href="/discuss/lists?forumname=siteaffairs">站务版</a><br>
+                    @08-18 09:29                                        <span class="lg-small">237回复</span>
+                                                                                    <span class="am-badge am-radius lg-bg-red">置顶</span>
+                                                            </span>
+                        </div>
+                    </div>
+                </section>
+                                <section class="am-panel lg-index-contest am-panel-primary">
+
+                    <div class="am-panel-bd">
+                        <div class="lg-inline-up"><a href="/user/260644" class="center">
+    <img src="https://cdn.luogu.com.cn/upload/usericon/260644.png" class="am-comment-avatar"/>
+    </a></div>
+                        <div class="lg-inline-up">
+                            <a data-pjax href="/discuss/show?postid=250850">名字竞技场新冠病毒怎么打</a>
+
+                            <br>
+                            <span class="lg-small"><a class='lg-fg-bluelight' href="/user/260644"  target="_blank">傻狗凉</a></span>
+                            <span class="lg-small">In
+                    <a data-pjax
+                       href="/discuss/lists?forumname=relevantaffairs">灌水区</a><br>
+                    @08-21 19:29                                        <span class="lg-small">15回复</span>
+                                                            </span>
+                        </div>
+                    </div>
+                </section>
+                                <section class="am-panel lg-index-contest am-panel-primary">
+
+                    <div class="am-panel-bd">
+                        <div class="lg-inline-up"><a href="/user/363765" class="center">
+    <img src="https://cdn.luogu.com.cn/upload/usericon/363765.png" class="am-comment-avatar"/>
+    </a></div>
+                        <div class="lg-inline-up">
+                            <a data-pjax href="/discuss/show?postid=250849">各位大佬，求助站外题</a>
+
+                            <br>
+                            <span class="lg-small"><a class='lg-fg-bluelight' href="/user/363765"  target="_blank">syx1251518686</a></span>
+                            <span class="lg-small">In
+                    <a data-pjax
+                       href="/discuss/lists?forumname=problem">题目总版</a><br>
+                    @08-21 19:24                                        <span class="lg-small">3回复</span>
+                                                            </span>
+                        </div>
+                    </div>
+                </section>
+                                <section class="am-panel lg-index-contest am-panel-primary">
+
+                    <div class="am-panel-bd">
+                        <div class="lg-inline-up"><a href="/user/320290" class="center">
+    <img src="https://cdn.luogu.com.cn/upload/usericon/320290.png" class="am-comment-avatar"/>
+    </a></div>
+                        <div class="lg-inline-up">
+                            <a data-pjax href="/discuss/show?postid=250847">这不是天使与魔鬼的那个问题吗？</a>
+
+                            <br>
+                            <span class="lg-small"><a class='lg-fg-green' href="/user/320290"  target="_blank">Instudy</a></span>
+                            <span class="lg-small">In
+                    <a data-pjax
+                       href="/discuss/lists?forumname=CF36D">CF36D New Game wi…</a><br>
+                    @08-21 19:22                                        <span class="lg-small">0回复</span>
+                                                            </span>
+                        </div>
+                    </div>
+                </section>
+                                <section class="am-panel lg-index-contest am-panel-primary">
+
+                    <div class="am-panel-bd">
+                        <div class="lg-inline-up"><a href="/user/95543" class="center">
+    <img src="https://cdn.luogu.com.cn/upload/usericon/95543.png" class="am-comment-avatar"/>
+    </a></div>
+                        <div class="lg-inline-up">
+                            <a data-pjax href="/discuss/show?postid=250846">为啥我一运行某fread就卡</a>
+
+                            <br>
+                            <span class="lg-small"><a class='lg-fg-green' href="/user/95543"  target="_blank">相顾总无言</a></span>
+                            <span class="lg-small">In
+                    <a data-pjax
+                       href="/discuss/lists?forumname=relevantaffairs">灌水区</a><br>
+                    @08-21 19:21                                        <span class="lg-small">3回复</span>
+                                                            </span>
+                        </div>
+                    </div>
+                </section>
+                                <section class="am-panel lg-index-contest am-panel-primary">
+
+                    <div class="am-panel-bd">
+                        <div class="lg-inline-up"><a href="/user/237541" class="center">
+    <img src="https://cdn.luogu.com.cn/upload/usericon/237541.png" class="am-comment-avatar"/>
+    </a></div>
+                        <div class="lg-inline-up">
+                            <a data-pjax href="/discuss/show?postid=250845">关于一个物理题</a>
+
+                            <br>
+                            <span class="lg-small"><a class='lg-fg-green' href="/user/237541"  target="_blank">___balalida___</a></span>
+                            <span class="lg-small">In
+                    <a data-pjax
+                       href="/discuss/lists?forumname=relevantaffairs">灌水区</a><br>
+                    @08-21 19:16                                        <span class="lg-small">4回复</span>
+                                                            </span>
+                        </div>
+                    </div>
+                </section>
+                                <section class="am-panel lg-index-contest am-panel-primary">
+
+                    <div class="am-panel-bd">
+                        <div class="lg-inline-up"><a href="/user/204282" class="center">
+    <img src="https://cdn.luogu.com.cn/upload/usericon/204282.png" class="am-comment-avatar"/>
+    </a></div>
+                        <div class="lg-inline-up">
+                            <a data-pjax href="/discuss/show?postid=250844">关于比long long 更大的类型</a>
+
+                            <br>
+                            <span class="lg-small"><a class='lg-fg-bluelight' href="/user/204282"  target="_blank">hawkyy</a></span>
+                            <span class="lg-small">In
+                    <a data-pjax
+                       href="/discuss/lists?forumname=P1009">P1009 阶乘之和</a><br>
+                    @08-21 19:10                                        <span class="lg-small">16回复</span>
+                                                            </span>
+                        </div>
+                    </div>
+                </section>
+                                <section class="am-panel lg-index-contest am-panel-primary">
+
+                    <div class="am-panel-bd">
+                        <div class="lg-inline-up"><a href="/user/243024" class="center">
+    <img src="https://cdn.luogu.com.cn/upload/usericon/243024.png" class="am-comment-avatar"/>
+    </a></div>
+                        <div class="lg-inline-up">
+                            <a data-pjax href="/discuss/show?postid=250843">TLE？0分求助</a>
+
+                            <br>
+                            <span class="lg-small"><a class='lg-fg-green' href="/user/243024"  target="_blank">gdjcwsk</a></span>
+                            <span class="lg-small">In
+                    <a data-pjax
+                       href="/discuss/lists?forumname=P3355">P3355 骑士共存问题</a><br>
+                    @08-21 19:07                                        <span class="lg-small">8回复</span>
+                                                            </span>
+                        </div>
+                    </div>
+                </section>
+                                <section class="am-panel lg-index-contest am-panel-primary">
+
+                    <div class="am-panel-bd">
+                        <div class="lg-inline-up"><a href="/user/326291" class="center">
+    <img src="https://cdn.luogu.com.cn/upload/usericon/326291.png" class="am-comment-avatar"/>
+    </a></div>
+                        <div class="lg-inline-up">
+                            <a data-pjax href="/discuss/show?postid=250840">萌新求助</a>
+
+                            <br>
+                            <span class="lg-small"><a class='lg-fg-bluelight' href="/user/326291"  target="_blank">АKCTSC</a></span>
+                            <span class="lg-small">In
+                    <a data-pjax
+                       href="/discuss/lists?forumname=academics">学术版</a><br>
+                    @08-21 19:05                                        <span class="lg-small">16回复</span>
+                                                            </span>
+                        </div>
+                    </div>
+                </section>
+                                <section class="am-panel lg-index-contest am-panel-primary">
+
+                    <div class="am-panel-bd">
+                        <div class="lg-inline-up"><a href="/user/250469" class="center">
+    <img src="https://cdn.luogu.com.cn/upload/usericon/250469.png" class="am-comment-avatar"/>
+    </a></div>
+                        <div class="lg-inline-up">
+                            <a data-pjax href="/discuss/show?postid=250839">关于 cout，endl 和函数的灵异事…</a>
+
+                            <br>
+                            <span class="lg-small"><a class='lg-fg-red lg-bold' href="/user/250469"  target="_blank">君のNOIP。</a>&nbsp;<a class="sb_amazeui" target="_blank" href="/discuss/show/142324"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#5eb95e" style="margin-bottom: -3px;"><path d="M16 8C16 6.84375 15.25 5.84375 14.1875 5.4375C14.6562 4.4375 14.4688 3.1875 13.6562 2.34375C12.8125 1.53125 11.5625 1.34375 10.5625 1.8125C10.1562 0.75 9.15625 0 8 0C6.8125 0 5.8125 0.75 5.40625 1.8125C4.40625 1.34375 3.15625 1.53125 2.34375 2.34375C1.5 3.1875 1.3125 4.4375 1.78125 5.4375C0.71875 5.84375 0 6.84375 0 8C0 9.1875 0.71875 10.1875 1.78125 10.5938C1.3125 11.5938 1.5 12.8438 2.34375 13.6562C3.15625 14.5 4.40625 14.6875 5.40625 14.2188C5.8125 15.2812 6.8125 16 8 16C9.15625 16 10.1562 15.2812 10.5625 14.2188C11.5938 14.6875 12.8125 14.5 13.6562 13.6562C14.4688 12.8438 14.6562 11.5938 14.1875 10.5938C15.25 10.1875 16 9.1875 16 8ZM11.4688 6.625L7.375 10.6875C7.21875 10.8438 7 10.8125 6.875 10.6875L4.5 8.3125C4.375 8.1875 4.375 7.96875 4.5 7.8125L5.3125 7C5.46875 6.875 5.6875 6.875 5.8125 7.03125L7.125 8.34375L10.1562 5.34375C10.3125 5.1875 10.5312 5.1875 10.6562 5.34375L11.4688 6.15625C11.5938 6.28125 11.5938 6.5 11.4688 6.625Z"></path></svg></a></span>
+                            <span class="lg-small">In
+                    <a data-pjax
+                       href="/discuss/lists?forumname=academics">学术版</a><br>
+                    @08-21 19:03                                        <span class="lg-small">13回复</span>
+                                                            </span>
+                        </div>
+                    </div>
+                </section>
+                            </div>
+
+                                                <div class="lg-article">
+                        <h2>有什么新鲜事告诉大家</h2>
+                                                <div class="am-form-group am-form">
+                            <textarea rows="3" id="feed-content"></textarea>
+                        </div>
+                        <button class="am-btn am-btn-danger am-btn-sm" id="feed-submit">　发射犇犇！　</button>
+
+                    </div>
+                    <div class="lg-article">
+                        <ul class="am-nav am-nav-pills am-nav-justify" id="home-center-nav">
+                            <li class="am-active feed-selector" data-mode="watching"><a style="cursor: pointer">我关注的</a></li>
+                            <li class="feed-selector" data-mode="my"><a style="cursor: pointer">我发布的</a></li>
+                        </ul>
+                    </div>
+                    <ul class="am-comments-list am-comments-list-flip" id="feed">
+                    </ul>
+                    <div class="lg-article am-text-center" id="feed-more"><a>点击查看更多...</a></div>
+                                    </div>
+    </div>
+</div>
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="report">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">反馈</div>
+        <div class="am-modal-bd">
+            如果你认为某条动态有问题，欢迎向洛谷反馈，以帮助更多的同学。
+            <br><br>
+            <select data-am-selected="{ btnStyle: 'secondary'}" name="reason">
+                <option value="不友善内容">辱骂与不友善内容</option>
+                <option value="无意义内容">无法令人理解的无意义内容</option>
+                <option value="违法内容">违法内容与有害信息</option>
+                <option value="其他">其他原因（请解释）</option>
+            </select><br><br>
+            请具体说明理由，以增加反馈的可信度。
+            <input type="text" class="am-modal-prompt-input" name="content">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    var feedPage = 1;
+    var feedMode = '';
+    var $feed = $("#feed");
+    function loadFeed() {
+        $.get("/feed/"+feedMode+"?page="+feedPage, function(resp) {
+            $feed.append(resp);
+            $("#feed-more").children("a").text("点击查看更多...")
+            $("[name=feed-delete]").click(function() {
+                $.post("/api/feed/delete/"+$(this).attr('data-feed-id'), function() {
+                    switchMode('watching');
+                })
+            })
+            $("[name=feed-reply]").click(function() {
+                var content = $(this).parents("li.feed-li").find(".feed-comment").text();
+                $("#feed-content").val(" || @" + $(this).attr('data-username') + " : " + content)
+            })
+            $("[name=feed-report]").click(function () {
+                var reportType = $(this).attr('data-report-type'), reportID = $(this).attr('data-report-id');
+                $('#report').modal({
+                    relatedTarget: this,
+                    onConfirm: function (e) {
+                        var reason = $('[name=reason]').val();
+                        var detail = $('[name=content]').val();
+
+                        $.post('/api/report/'+reportType, {
+                            relevantID: reportID,
+                            reason: reason + ' ' + detail
+                        }, function (data) {
+                            show_alert("提示", data.data);
+                        });
+                    }
+                });
+            });
+        });
+        feedPage++;
+    }
+
+    function switchMode(mode) {
+        feedMode = mode;
+        feedPage = 1;
+        $feed.html('');
+        $("#feed-more").show();
+        $(".feed-selector").removeClass("am-active");
+        $(".feed-selector[data-mode="+mode+"]").addClass("am-active");
+        loadFeed();
+    }
+
+    $(document).ready(function () {
+                    if($feed) switchMode('watching');
+        
+        $("#feed-more").click(function() {
+            $(this).children("a").text("加载中...");
+            loadFeed();
+        });
+        $(".feed-selector").click(function() {
+            var mode = $(this).attr('data-mode');
+            switchMode(mode);
+        });
+
+        $("#feed-submit").click(function () {
+            $(this).addClass("am-disabled");
+            var content = $('#feed-content').val(), e = this;
+            $.post("/api/feed/postBenben", {content: content}, function (resp) {
+                if(resp.status !== 200) {
+                    show_alert("好像哪里有点问题", resp.data);
+                } else {
+                    $(e).removeClass("am-disabled");
+                    $("#feed-content").val('');
+                    switchMode('watching');
+                }
+            });
+        });
+    });
+
+
+    $("[name=punch]").click(function () {
+        $(this).addClass("am-disabled");
+        $(this).html("<i class='am-icon-spinner am-icon-pulse'></i>求签中");
+        verify = $("[name=verify]").val();
+        $.post("/index/ajax_punch", {verify:verify}, function (data) {
+            var res;
+            res = eval("(" + data + ")");
+            if (res["code"] != 200) {
+                show_alert("好像哪里有点问题", res["message"]);
+                $("[name=punch]").text('点击打卡').removeClass("am-disabled")
+            }
+            else {
+                $('.lg-punch').html(res["more"]["html"]);
+            }
+        });
+    });
+    $("[name=toproblem]").keyup(function (event) {
+        if (event.keyCode === 13) {
+      if($(this).val() === '') return;
+            var pid = $(this).val()
+            if(!isNaN(pid)) pid = 'P'+pid
+            goto_url('/problemnew/show/' + pid)
+        }
+    })
+    $("[name=gotorandom]").click(function () {
+        goto_url('/problemnew/show/P' + (parseInt(Math.random(0, 1) * 4486) + 1000));
+    });
+    $("[name=goto]").click(function () {
+        if($('[name=toproblem]').val()==='') {
+            show_alert("提示", "请输入题号");
+            return;
+        }
+        var pid = $('[name=toproblem]').val()
+        if(!isNaN(pid)) pid = 'P'+pid
+        goto_url('/problemnew/show/' + pid)
+    });
+</script>
+</div>
+
+<div class="am-modal am-modal-alert" tabindex="-1" id="lg-alert">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd" id="lg-alert-title"></div>
+        <div class="am-modal-bd" id="lg-alert-message"></div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+
+<script src="/js/ace/ace.js"></script>
+
+<script src="https://cdn.luogu.com.cn/js/vendor.js" data-manual></script>
+<script src="https://cdn.luogu.com.cn/js/jsmind.js" data-manual></script>
+<!--
+<script src="https://cdn.luogu.com.cn/js/ajaxfileupload.js" data-manual></script>
+<script src="https://cdn.luogu.com.cn/js/jquery.pjax.js" data-manual></script>
+-->
+
+<!--ajaxfileupload.js highlight.pack.js jquery.pjax.js markDownEditor.js poshytip.js qrcode.min.js-->
+
+<script src="https://cdn.luogu.com.cn/js/amazeui.min.js"></script>
+<script src="https://cdn.luogu.com.cn/js/highcharts.js"></script>
+<script src="https://cdn.luogu.com.cn/js/highcharts-more.js"></script>
+<script src="/static/katex/katex.min.js"></script>
+<script src="/static/katex/contrib/auto-render.min.js"></script>
+<script src="https://cdn.luogu.com.cn/markdown-palettes/markdown-palettes.min.js?ver=20190219"></script>
+<script src="https://cdn.luogu.com.cn/js/luogu3.js?ver=20190724"></script>
+
+<!--script src="//www.recaptcha.net/recaptcha/api.js?hl=zh-CN&render=explicit&onload=renderCaptcha" async defer></script-->
+</body>
 </html>
