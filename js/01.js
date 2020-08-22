@@ -1,7 +1,7 @@
 var cnt=0;
 function dianji(btn) {
 	++cnt;
-	if (cnt%2==0){
+	if (cnt%2==1){
 		document.getElementById("aud").play();
 		btn.src="image/pause.png";
 	}else {

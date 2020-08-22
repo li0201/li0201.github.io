@@ -9,7 +9,7 @@
     <!-- <img src="image/Jerry.png" style="display: none"> -->
     <!-- <img src="image/pause.png" style="display: none"> -->
     <img src="image/play.png" style="display: none">
-    <audio src="audio/You~1.mp3" loop="loop" autoplay="autoplay" id="aud"></audio>
+    <audio src="audio/You~1.mp3" loop="loop" id="aud"></audio>
     <!-- <body background="image/010.png"></body> -->
     <script type="text/javascript" src="js/01.js"></script>
     <style>
@@ -24,9 +24,19 @@
         </a>
     </nav>
     <center>
-        <img src="image/pause.png" onclick="dianji(this)" width="80px" height="80px">
+        <img src="image/play.png" onclick="dianji(this)" width="80px" height="80px">
     </center>
-    <img src="image/Tom.png" style="position:absolute; left: 80px;" width="500px" height="500px">
-    <img src="image/Jerry.png" style="position:absolute; right: 80px;" width="650px" height="500px">
+    <center>
+        <video controls="controls">
+            <source src="video/Flappy Bird.webm" type="video/webm"/>
+            <source src="video/Flappy Bird.ogg" type="video/ogg"/>
+            <source src="video/Flappy Bird.mp4" type="video/mp4"/>
+            <object data="video/Flappy Bird.mp4">
+                <embed src="video/Flappy Bird.swf"/>
+            </object>
+        </video>
+    </center>
+    <img src="image/Tom.png" style="position:absolute; left: 80px; display: none" width="500px" height="500px">
+    <img src="image/Jerry.png" style="position:absolute; right: 80px; display: none" width="650px" height="500px">
 </body>
 </html>
