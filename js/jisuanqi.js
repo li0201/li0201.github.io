@@ -1,6 +1,6 @@
 function isnumber(obj) {
 	if (obj=="")return false;
-	var reg=/^[0-9]+.?[0-9]*$/;
+	var reg=/^\s*-?[0-9]+(\.?[0-9]+)*\s*$/;
 	if (reg.test(obj)){
 		return true;
 	}
@@ -16,9 +16,10 @@ function init() {
 		document.getElementById("demo4").innerHTML=Number(number1)/Number(number2);
 	}
 	else {
-		document.getElementById("demo1").innerHTML="0";
+		window.alert("请输入正确格式的数字");
+		/*document.getElementById("demo1").innerHTML="0";
 		document.getElementById("demo2").innerHTML="0";
 		document.getElementById("demo3").innerHTML="0";
-		document.getElementById("demo4").innerHTML="0";
+		document.getElementById("demo4").innerHTML="0";*/
 	}
 }
