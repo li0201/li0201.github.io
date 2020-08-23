@@ -9,10 +9,16 @@ function isnumber(obj) {
 function init() {
 	var number1=document.getElementById("input1").value;
 	var number2=document.getElementById("input2").value;
-	document.getElementById("first").innerHTML=isnumber(number1);
-	document.getElementById("second").innerHTML=isnumber(number2);
 	if (isnumber(number1)&&isnumber(number2)){
-		document.getElementById("demo").innerHTML=Number(number1)+Number(number2);
+		document.getElementById("demo1").innerHTML=Number(number1)+Number(number2);
+		document.getElementById("demo2").innerHTML=Number(number1)-Number(number2);
+		document.getElementById("demo3").innerHTML=Number(number1)*Number(number2);
+		document.getElementById("demo4").innerHTML=Number(number1)/Number(number2);
 	}
-	else document.getElementById("demo").innerHTML="0";
+	else {
+		document.getElementById("demo1").innerHTML="0";
+		document.getElementById("demo2").innerHTML="0";
+		document.getElementById("demo3").innerHTML="0";
+		document.getElementById("demo4").innerHTML="0";
+	}
 }
