@@ -3,6 +3,15 @@
 <head>
     <title>测试</title>
     <link rel="icon" type="image/ico" href="image/Tom.ico">
+    <style>
+        embed{
+            text-align: center;
+            border-style: double;
+            border-radius:40px;
+            width: 500px;
+            height: 440px;
+        }
+    </style>
 </head>
 <body>
     <!-- <img src="image/Tom.png" style="display: none"> -->
@@ -24,22 +33,32 @@
     <center>
         <img src="image/play.png" onclick="dianji(this)" width="80px" height="80px">
     </center>
-    <center>
-        <video controls="controls">
-            <source src="video/Flappy Bird.webm" type="video/webm"/>
-            <source src="video/Flappy Bird.ogg" type="video/ogg"/>
-            <source src="video/Flappy Bird.mp4" type="video/mp4"/>
-            <object data="video/Flappy Bird.mp4">
-                <embed src="video/Flappy Bird.swf"/>
-            </object>
-        </video>
-    </center>
+    <div style="margin-left: 200px;">
+        <div style="display: inline;">
+            <video controls="controls">
+                <source src="video/Flappy Bird.webm" type="video/webm"/>
+                <source src="video/Flappy Bird.ogg" type="video/ogg"/>
+                <source src="video/Flappy Bird.mp4" type="video/mp4"/>
+                <object data="video/Flappy Bird.mp4">
+                    <embed src="video/Flappy Bird.swf"/>
+                </object>
+            </video>
+        </div>
+        <div style="display: inline; position: relative; left: 50px; font-size: 50px; font-family: Fira Code; bottom: 200px">
+            flash测试-->
+        </div>
+        <div id="flash" style="display: inline; position: relative; left: 80px;">
+            <embed src="flash/test.swf">
+        </div>
+    </div>
     <img src="image/Tom.png" style="position:absolute; left: 80px; display: none" width="500px" height="500px">
     <img src="image/Jerry.png" style="position:absolute; right: 80px; display: none" width="650px" height="500px">
-    <a href="Calculator.html">
-        <center>
-            <font face="微软雅黑" size="25" color="blue">计算器</font>
-        </center>
-    </a>
+    <div>
+        <a href="Calculator.html">
+            <center>
+                <font face="微软雅黑" size="25" color="blue">计算器</font>
+            </center>
+        </a>
+    </div>
 </body>
 </html>
